@@ -1,4 +1,3 @@
-
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import Loading from "../../components/Loading";
@@ -46,47 +45,48 @@ const Reviews = ({ allEvents, homeEvents, currentPage, eventsPerPage }) => {
         !paginatedEvents.length && dispatch(getAllEventsFinalized());
     }, []);
     return (
-        <div>
-            <div className="w-full px-2 sm:px-0">
-                {/* Carousel */}
-                <div className="h-64 sm:h-96 overflow-hidden relative">
-                    {/* Carousel images */}
-                    <div
-                        className="h-full w-full absolute top-0 left-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 transform"
-                        style={{
-                            backgroundImage: `url(${currentImage})`,
-                            transform: "translateX(0%)",
-                        }}
-                    ></div>
-                    <div
-                        className="h-full w-full absolute top-0 left-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 transform"
-                        style={{
-                            backgroundImage: `url(${currentImage === images[0] ? images[1] : images[0]})`,
-                            transform: "translateX(100%)",
-                        }}
-                    ></div>
-                </div>
-                {/* Pagination */}
-                <div className="flex w-fit justify-self-end my-2 items-center gap-2 sm:gap-6 py-1 px-2 sm:px-4 bg-secondary rounded-full border border-secondaryBorder mr-2 sm:mr-4">
-                    <>{allEvents.length} Resultados</> | Página {totalPages ? currentPage : "0"} / {totalPages}
+        <div className="w-full min-h-screen">
+            {/* Carousel */}
+            <div className="h-96 overflow-hidden relative">
+                {/* Carousel images */}
+                <div
+                    className="h-full w-full absolute top-0 left-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 transform"
+                    style={{
+                        backgroundImage: `url(${currentImage})`,
+                        transform: "translateX(0%)",
+                    }}
+                ></div>
+                <div
+                    className="h-full w-full absolute top-0 left-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 transform"
+                    style={{
+                        backgroundImage: `url(${
+                            currentImage === images[0] ? images[1] : images[0]
+                        })`,
+                        transform: "translateX(100%)",
+                    }}
+                ></div>
+            </div>
+            <div className="w-screen grid my-4">
+                <div className="flex w-fit justify-self-end my-2 items-center gap-6 py-1 px-4 bg-secondary rounded-full border border-secondaryBorder mr-4">
+                    <>{allEvents.length} Resultados</> | Página{" "}
+                    {totalPages ? currentPage : "0"} / {totalPages}
                 </div>
             </div>
-    
-            <div className="grid grid-cols-1 gap-6 m-2 sm:m-4 min-h-screen justify-items-center">
-    {paginatedEvents.map((event) => (
-        <EventCardF
-            key={event.id}
-            id={event.id}
-            name={event.name}
-            producer={event.producer}
-            image={event.image}
-            hour={event.hour}
-            venue={event.venue}
-            date={event.date}
-            className="min-h-[20rem]"
-        />
-    ))}
-</div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 m-6 min-h-screen justify-items-center">
+                {paginatedEvents.map((event) => (
+                    <EventCardF
+                        key={event.id}
+                        id={event.id}
+                        name={event.name}
+                        producer={event.producer}
+                        image={event.image}
+                        hour={event.hour}
+                        venue={event.venue}
+                        date={event.date}
+                    />
+                ))}
+            </div>
             <div className="flex items-center justify-center">
                 {isLoading ? (
                     <Loading />
@@ -109,8 +109,7 @@ const Reviews = ({ allEvents, homeEvents, currentPage, eventsPerPage }) => {
             </div>
         </div>
     );
-    
-}    
+};
 
 const mapStateToProps = (state) => {
     return {

@@ -36,7 +36,6 @@ import Loading from "../../components/Loading";
 // Consts
 import { SECONDS_TO_PAY } from "../../const";
 
-
 const EventCart = () => {
     // Global state
     const userData = useSelector((state) => state.userData);
@@ -125,9 +124,6 @@ const EventCart = () => {
         }
     }, [totalToPay]);
 
-
-    console.log(selectedTickets)
-
     return (
         <div className="w-full">
             <div className="h-16"></div>
@@ -178,33 +174,36 @@ const EventCart = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {ticketsToPay?.map((ticket) => (
-                                            ticket.quantity?(
-                                            <tr
-                                                className="border-b"
-                                                key={ticket.id}
-                                            >
-                                                <td className="px-2 py-4 text-start">
-                                                    {ticket.name}
-                                                </td>
-                                                <td className="px-2 py-4 text-start">
-                                                    ${" "}
-                                                    {ticket.price.toLocaleString(
-                                                        "es"
-                                                    )}
-                                                </td>
-                                                <td className="px-2 py-4 text-center">
-                                                    {ticket.quantity}
-                                                </td>
-                                                <td className="px-2 py-4 text-center">
-                                                    ${" "}
-                                                    {(
-                                                        ticket.quantity *
-                                                        ticket.price
-                                                    ).toLocaleString("es")}
-                                                </td>
-                                            </tr>
-                                        ):<></>))}
+                                        {ticketsToPay?.map((ticket) =>
+                                            ticket.quantity ? (
+                                                <tr
+                                                    className="border-b"
+                                                    key={ticket.id}
+                                                >
+                                                    <td className="px-2 py-4 text-start">
+                                                        {ticket.name}
+                                                    </td>
+                                                    <td className="px-2 py-4 text-start">
+                                                        ${" "}
+                                                        {ticket.price.toLocaleString(
+                                                            "es"
+                                                        )}
+                                                    </td>
+                                                    <td className="px-2 py-4 text-center">
+                                                        {ticket.quantity}
+                                                    </td>
+                                                    <td className="px-2 py-4 text-center">
+                                                        ${" "}
+                                                        {(
+                                                            ticket.quantity *
+                                                            ticket.price
+                                                        ).toLocaleString("es")}
+                                                    </td>
+                                                </tr>
+                                            ) : (
+                                                <></>
+                                            )
+                                        )}
                                         <tr
                                             className="font-semibold border-t-4 border-fuchsia-600 rounded-md"
                                             key="sum"

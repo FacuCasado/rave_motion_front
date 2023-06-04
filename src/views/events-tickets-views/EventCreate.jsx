@@ -57,10 +57,10 @@ const validationSchema = Yup.object().shape({
         .matches(/^([01]\d|2[0-3]):([0-5]\d)$/, "La hora no es válida.")
         .required("Este campo es requrido."),
     venue: Yup.string()
-        .max(50, "Debe ser hasta 50 caracteres.")
+        .max(20, "Debe ser hasta 20 caracteres.")
         .required("Este campo es requerido."),
     producer: Yup.string()
-        .max(50, "Debe ser hasta 50 caracteres.")
+        .max(20, "Debe ser hasta 20 caracteres.")
         .required("Este campo es requerido."),
     description: Yup.string().required("Este campo es requerido."),
 });
@@ -69,7 +69,7 @@ const createImage = "https://wallpapercave.com/wp/wp12143405.jpg";
 
 const EventCreate = (props) => {
     // Actions & global state from props
-    const { userData, eventDetail } = props;
+    const { userData } = props;
     const {
         getEventById,
         removeEventDetail,
@@ -86,7 +86,7 @@ const EventCreate = (props) => {
     const [imageDataUrl, setImageDataUrl] = useState("");
     const [imageError, setImageError] = useState({ status: "", disabled: "y" });
     const [imageName, setImageName] = useState({ name: "" });
-    const [modify, setModify] =useState("")
+    const [modify, setModify] = useState("");
 
     useEffect(() => {
         const getEventIfEventId = async () => {
@@ -104,7 +104,7 @@ const EventCreate = (props) => {
                 const response = await axios.get(
                     `${BACKEND_URL}/events/${eventId}`
                 );
-                setModify("mod")
+                setModify("mod");
                 response.data.date = response.data.date.split("T")[0];
                 response.data.hour = response.data.hour.slice(
                     0,
@@ -173,14 +173,14 @@ const EventCreate = (props) => {
         { setSubmitting, resetForm }
     ) => {
         const event = { ...values, userId: userData.id, image: imageDataUrl };
-        if(!modify.length){
+        if (!modify.length) {
             try {
                 const response = await axios.post(
                     `${import.meta.env.VITE_BACKEND_URL}/events/eventcreate`,
                     event
                 );
                 const newEvent = response.data;
-                
+
                 setGlobalSuccess(
                     `El evento "${newEvent.name}" se ha creado correctamente.`
                 );
@@ -189,24 +189,26 @@ const EventCreate = (props) => {
                 setGlobalError(error.response.data.error);
             }
             setSubmitting(false);
-            resetForm();}
-            else{
-                try {
-                    const putEvent = event;
-                    const response = await axios.put(
-                        `${import.meta.env.VITE_BACKEND_URL}/events/putevent/${eventId}`,
-                        putEvent);
-                        navigate(`/dashboard`);
-                        setGlobalSuccess(
-                            `El evento ${event.name} se ha Modificado correctamente.`
-                        );
-
-                } catch (error) {
-                    console.log(error)
-                }
-                setSubmitting(false);
-                resetForm();
+            resetForm();
+        } else {
+            try {
+                const putEvent = event;
+                const response = await axios.put(
+                    `${
+                        import.meta.env.VITE_BACKEND_URL
+                    }/events/putevent/${eventId}`,
+                    putEvent
+                );
+                navigate(`/dashboard`);
+                setGlobalSuccess(
+                    `El evento ${event.name} se ha Modificado correctamente.`
+                );
+            } catch (error) {
+                setGlobalError(error.response.data.error);
             }
+            setSubmitting(false);
+            resetForm();
+        }
     };
 
     return (

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 // React Router Dom
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 // Redux
 import { connect } from "react-redux";
 import { verifyToken } from "./redux/actions/usersActions";
 import axios from "axios";
+
 // Components
 import Alert from "./components/Alert";
 import Header from "./components/Header";
@@ -41,13 +42,7 @@ import Loading from "./components/Loading";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-const App = ({
-    verifyToken,
-    isLogin,
-    userData,
-    globalError,
-    globalSuccess,
-}) => {
+const App = ({ verifyToken, isLogin, globalError, globalSuccess }) => {
     // Locations
     const location = useLocation().pathname;
     const showHeader =
@@ -57,22 +52,23 @@ const App = ({
     const showFooter = location.slice(0, 10) !== "/dashboard";
 
     // Sign In by JSW
-    const[loading, setLoading]=useState(true)
+    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
     useEffect(() => {
-        const loginJWT=async()=>{
+        const loginJWT = async () => {
             const token = localStorage.getItem("token");
             const tokenGoogle = localStorage.getItem("tokenGoogle");
-            if((token||tokenGoogle)&&!isLogin){
-                setLoading(true)
+            if ((token || tokenGoogle) && !isLogin) {
+                setLoading(true);
                 try {
                     if (token && !isLogin) {
-                    const response = await axios.post(
-                        `${BACKEND_URL}/users/signinsession`,
-                        {
-                            token: token,
-                        }
-                    );
-                    verifyToken(response.data);
+                        const response = await axios.post(
+                            `${BACKEND_URL}/users/signinsession`,
+                            {
+                                token: token,
+                            }
+                        );
+                        verifyToken(response.data);
                     }
                     if (tokenGoogle && !isLogin) {
                         const response = await axios.post(
@@ -83,30 +79,28 @@ const App = ({
                         );
                         verifyToken(response.data);
                     }
-                    
                 } catch (error) {
-                    console.log(error.message)
-                } finally{
-                    setLoading(false)
+                    console.log(error.message);
+                } finally {
+                    setLoading(false);
                 }
             }
-            if(isLogin){
-                setLoading(false)
+            if (isLogin) {
+                setLoading(false);
             }
-            if(!isLogin&&!token&&!tokenGoogle){
-                setLoading(false)
-                navigate("/signin")
+            if (!isLogin && !token && !tokenGoogle) {
+                setLoading(false);
+                navigate("/signin");
             }
-        }
+        };
         loginJWT();
     }, []);
 
-    return (
-        loading?
+    return loading ? (
         <div className="w-screen h-screen bg-primary">
-            <Loading/>
+            <Loading />
         </div>
-        :
+    ) : (
         <div className="bg-primary text-white antialiased overflow-hidden">
             {showHeader && <Header />}
             {globalError && <Alert />}

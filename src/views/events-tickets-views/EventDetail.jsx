@@ -252,13 +252,13 @@ const EventDetail = (props) => {
 
                                                 <th
                                                     scope="col"
-                                                    className="px-2 py-3 text-start"
+                                                    className="px-2 py-3 text-center"
                                                 >
                                                     Tipo de acceso
                                                 </th>
                                                 <th
                                                     scope="col"
-                                                    className="px-2 py-3 text-start"
+                                                    className="px-2 py-3 text-center"
                                                 >
                                                     Precio
                                                 </th>
@@ -285,11 +285,11 @@ const EventDetail = (props) => {
                                                     <td className="px-2 py-4">
                                                         {ticket.name}
                                                     </td>
-                                                    <td className="px-2 py-4">
+                                                    <td className="px-2 py-4 text-center">
                                                         {ticket.accessType}
                                                     </td>
 
-                                                    <td className="px-2 py-4">
+                                                    <td className="px-2 py-4 text-center">
                                                         $
                                                         {ticket.price.toLocaleString(
                                                             "es"
@@ -314,32 +314,44 @@ const EventDetail = (props) => {
                                                     )}
                                                 </tr>
                                             ))}
-                                            <tr
-                                                className="font-semibold border-t-4 border-fuchsia-600 rounded-md"
-                                                key="sum"
-                                            >
-                                                <td className="px-2 py-4">
-                                                    <button
-                                                        className="btnPrimary"
-                                                        onClick={buyTickets}
-                                                        disabled={error||(userData.id ===
-                                                        eventDetail.userId)||(total===0)}
-                                                    >
-                                                        Comprar
-                                                    </button>
-                                                </td>
-                                                <td className="px-2 py-4 text-end">
-                                                    Total:
-                                                </td>
+                                            {userData.id ===
+                                                eventDetail.userId ||
+                                            !eventDetail.current ? (
+                                                <></>
+                                            ) : (
+                                                <tr
+                                                    className="font-semibold border-t-4 border-fuchsia-600 rounded-md"
+                                                    key="sum"
+                                                >
+                                                    <td className="px-2 py-4">
+                                                        <button
+                                                            className="btnPrimary"
+                                                            onClick={buyTickets}
+                                                            disabled={
+                                                                error ||
+                                                                userData.id ===
+                                                                    eventDetail.userId ||
+                                                                total === 0
+                                                            }
+                                                        >
+                                                            Comprar
+                                                        </button>
+                                                    </td>
+                                                    <td className="px-2 py-4 text-end">
+                                                        Total:
+                                                    </td>
 
-                                                <td className="px-2 py-4 text-start">
-                                                    ${" "}
-                                                    {total.toLocaleString("es")}
-                                                </td>
-                                                <td className="px-2 py-4 text-center">
-                                                    {quantity}
-                                                </td>
-                                            </tr>
+                                                    <td className="px-2 py-4 text-center">
+                                                        ${" "}
+                                                        {total.toLocaleString(
+                                                            "es"
+                                                        )}
+                                                    </td>
+                                                    <td className="px-2 py-4 text-center">
+                                                        {quantity}
+                                                    </td>
+                                                </tr>
+                                            )}
                                         </tbody>
                                     </table>
                                     {error && (
