@@ -149,7 +149,7 @@ export const EventCardF = (props) => {
                     {formatDate}
                     <span className="text-fuchsia-600">Finalizado</span>
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-center">
                     <div className="flex items-center gap-2">
                         <StarRatingStatic rating={averageRating} />
                         {totalCritics && `(${totalCritics})`}

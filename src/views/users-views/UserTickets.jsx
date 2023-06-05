@@ -113,7 +113,7 @@ const UserTickets = (props) => {
                                     scope="col"
                                     className="px-2 py-3 text-center"
                                 >
-                                    Descargar QR
+                                    Descargar
                                 </th>
                             </tr>
                         </thead>

@@ -73,7 +73,7 @@ const Reviews = ({ allEvents, homeEvents, currentPage, eventsPerPage }) => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 m-6 min-h-screen justify-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-6 m-6 min-h-screen justify-items-center">
                 {paginatedEvents.map((event) => (
                     <EventCardF
                         key={event.id}

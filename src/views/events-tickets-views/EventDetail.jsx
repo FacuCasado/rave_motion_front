@@ -118,14 +118,14 @@ const EventDetail = (props) => {
     return (
         <div className="w-screen">
             {/* Pantalla 1 -> Event Detail */}
-            <div className="h-screen" id="event">
+            <div className="h-screen mx-6" id="event">
                 {/* Separador del header */}
                 <div className="h-16"></div>
 
                 {/* Float Box con detalle y flecha */}
                 <div className="my-auto min-h-[calc(100vh_-_4rem)] flex flex-col justify-center ">
                     {/* Detalle */}
-                    <div className="floatBox w-full md:w-2/3 h-fit mx-auto overflow-hidden font-sans bg-secondary">
+                    <div className="floatBox w-full md:w-2/3 h-fit md:mx-auto overflow-hidden font-sans bg-secondary">
                         {eventDetail.name ? (
                             <div className="h-full w-full flex flex-col">
                                 {/* Name */}
@@ -213,7 +213,7 @@ const EventDetail = (props) => {
             </div>
 
             {/* Pantalla 2 -> Event Tickets*/}
-            <div className="min-h-[calc(100vh_-_7rem)]" id="tickets">
+            <div className="min-h-[calc(100vh_-_7rem)] mx-6" id="tickets">
                 {/* Separador del header */}
                 <div className="h-16"></div>
 
@@ -230,7 +230,7 @@ const EventDetail = (props) => {
                 {/* Float Box con tickets */}
                 <div className="my-auto  flex flex-col justify-center ">
                     {/* Header tickets */}
-                    <div className="floatBox md:w-2/3 h-fit mx-auto overflow-hidden font-sans bg-secondary">
+                    <div className="floatBox md:w-2/3 h-fit md:mx-auto overflow-hidden font-sans bg-secondary">
                         {tickets?.length ? (
                             <>
                                 <div className="flex flex-row w-full items-center justify-center pb-4 border-b border-secondaryBorder">
@@ -325,7 +325,7 @@ const EventDetail = (props) => {
                                                 >
                                                     <td className="px-2 py-4">
                                                         <button
-                                                            className="btnPrimary"
+                                                            className="btnPrimary text-sm px-0 lg:text-base"
                                                             onClick={buyTickets}
                                                             disabled={
                                                                 error ||

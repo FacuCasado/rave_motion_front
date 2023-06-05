@@ -88,9 +88,13 @@ const App = ({ verifyToken, isLogin, globalError, globalSuccess }) => {
             if (isLogin) {
                 setLoading(false);
             }
-            if (!isLogin && !token && !tokenGoogle) {
-                setLoading(false);
-                navigate("/signin");
+            
+            if(!isLogin&&!token&&!tokenGoogle){
+                setLoading(false)
+                if(location==='/cart/:eventId'||location==='/tickets'){
+                    navigate("/signin")
+                }
+
             }
         };
         loginJWT();
