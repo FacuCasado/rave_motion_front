@@ -24,7 +24,7 @@ const GoogleAuthComponent = () => {
     useEffect(() => {
         google.accounts.id.initialize({
             client_id:
-                "http://255049858573-qm7dl82tt6j3bj837067gb83snm2ihup.apps.googleusercontent.com",
+                "255049858573-qm7dl82tt6j3bj837067gb83snm2ihup.apps.googleusercontent.com",
             callback: handleCallbackResponse,
         });
         google.accounts.id.renderButton(document.getElementById("signInDiv"), {
