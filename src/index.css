@@ -20,25 +20,25 @@
 @layer components {
     /* Buttons */
     .btnPrimary {
-        @apply block w-full text-lg py-2 rounded-full bg-gradient-to-r from-fuchsia-800 to-pink-500 border border-fuchsia-600 hover:bg-gradient-to-r hover:from-fuchsia-600 hover:to-pink-400  focus:outline-none transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed;
+        @apply block w-full text-lg py-2 rounded-full text-text font-medium dark:font-normal bg-gradient-to-r from-fuchsia-700 to-pink-400 dark:bg-gradient-to-r dark:from-fuchsia-800 dark:to-pink-500 border border-fuchsia-400 dark:border-fuchsia-600 hover:bg-gradient-to-r hover:from-fuchsia-500 hover:to-pink-400 dark:hover:bg-gradient-to-r dark:hover:from-fuchsia-600 dark:hover:to-pink-400  focus:outline-none transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed;
     }
 
     .btnPagination {
-        @apply inline-block w-full py-2 px-4 rounded-full bg-gradient-to-r from-fuchsia-800 to-pink-500 border border-fuchsia-600 hover:bg-gradient-to-r hover:from-fuchsia-600 hover:to-pink-400  focus:outline-none transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed;
+        @apply inline-block w-full py-2 px-4 rounded-xl dark:text-text font-medium dark:font-normal bg-gradient-to-r from-fuchsia-700 to-pink-400 dark:bg-gradient-to-r dark:from-fuchsia-800 dark:to-pink-500 border border-fuchsia-400 dark:border-fuchsia-600 hover:bg-gradient-to-r hover:from-fuchsia-500 hover:to-pink-400 dark:hover:bg-gradient-to-r dark:hover:from-fuchsia-600 dark:hover:to-pink-400  focus:outline-none transition-colors duration-300 disabled:opacity-70 disabled:cursor-not-allowed;
     }
 
     .btnPaginationSelected {
-        @apply inline-block w-full py-2 px-4 rounded-full border border-fuchsia-600 bg-gradient-to-r from-fuchsia-500 to-pink-400  focus:outline-none transition-colors duration-300 cursor-not-allowed;
+        @apply inline-block w-full py-2 px-4 rounded-xl dark:text-text font-medium dark:font-normal bg-gradient-to-r from-fuchsia-400 to-pink-300 dark:bg-gradient-to-r dark:from-fuchsia-500 dark:to-pink-400 border border-fuchsia-400 dark:border-fuchsia-600  focus:outline-none transition-colors duration-300 cursor-not-allowed;
     }
 
     /* Inputs */
     /* inputs */
     .input {
-        @apply h-8 px-4 py-4 w-full text-black border border-fuchsia-600 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-fuchsia-700 focus:border-transparent;
+        @apply h-8 px-4 py-4 w-full text-black border border-secondaryBorderLight dark:border-fuchsia-600 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-fuchsia-700 focus:border-transparent;
     }
 
     .inputError {
-        @apply h-8 px-4 py-4 w-full text-black  border border-red-500 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent;
+        @apply h-8 px-4 py-4 w-full text-black bg-primaryLight dark:bg-white border border-red-500 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent;
     }
 
     .inputSuccess {
@@ -47,7 +47,7 @@
 
     /* inputs textarea */
     .inputTextArea {
-        @apply block h-fit px-4 py-4 w-full text-black border border-fuchsia-600 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-fuchsia-700 focus:border-transparent;
+        @apply block h-fit px-4 py-4 w-full text-black border border-secondaryBorderLight dark:border-fuchsia-600 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-fuchsia-700 focus:border-transparent;
     }
 
     .inputTextAreaError {
@@ -60,7 +60,7 @@
 
     /* inputs select */
     .inputSelect {
-        @apply h-8 px-4 w-full text-black border border-fuchsia-600 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-fuchsia-700 focus:border-transparent;
+        @apply h-8 px-4 w-full text-black border border-secondaryBorderLight dark:border-fuchsia-600 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-fuchsia-700 focus:border-transparent;
     }
 
     .inputSelectError {
@@ -78,20 +78,20 @@
 
     /* Form errors */
     .errorMessage {
-        @apply text-red-400 block text-center mt-1 font-medium;
+        @apply text-errorTextLight dark:text-errorText block text-center mt-1 font-medium;
     }
 
     /* Links */
     .link {
-        @apply text-fuchsia-300 hover:text-fuchsia-600 focus:outline-none transition-colors duration-300;
+        @apply text-fuchsia-600 dark:text-fuchsia-300 hover:text-fuchsia-800 hover:font-medium dark:hover:font-normal dark:hover:text-fuchsia-600 focus:outline-none transition-colors duration-300;
     }
 
     .navLink {
-        @apply text-lg hover:text-fuchsia-600 focus:outline-none transition-colors duration-300;
+        @apply text-lg font-medium text-fuchsia-800 dark:text-fuchsia-300 focus:outline-none transition-colors duration-300;
     }
 
     .dropDownItem {
-        @apply block px-4 py-2 hover:bg-gradient-to-r from-fuchsia-800 to-pink-500 transition-colors duration-300;
+        @apply block px-4 py-2 hover:bg-gradient-to-r hover:from-fuchsia-700 hover:to-pink-400  dark:hover:bg-gradient-to-r dark:hover:from-fuchsia-800 dark:hover:to-pink-500 transition-colors duration-300;
     }
 
     .navLinkDropdown {
@@ -100,10 +100,10 @@
 
     /* Varios */
     .step {
-        @apply flex bg-gradient-to-r from-fuchsia-800 to-pink-500 border border-fuchsia-600 rounded-tl-full rounded-br-full;
+        @apply flex bg-gradient-to-r from-fuchsia-700 to-pink-400 dark:from-fuchsia-800 dark:to-pink-500 border border-fuchsia-400 dark:border-fuchsia-600 rounded-tl-full rounded-br-full;
     }
 
     .floatBox {
-        @apply flex flex-col py-8 px-4 bg-slate-900 rounded-xl border border-secondaryBorder;
+        @apply flex flex-col py-8 px-4 shadow bg-secondaryLight dark:bg-secondary rounded-xl border border-secondaryBorderLight dark:border-secondaryBorder;
     }
 }

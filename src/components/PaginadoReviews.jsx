@@ -12,14 +12,14 @@ const PaginadoF = ({ currentPage, totalPages, setCurrentPage }) => {
 
     return (
         <div className="flex content-center w-full h-16">
-            <div className="flex self-center items-center gap-6 my-4 mx-auto">
+            <div className="flex self-center items-center gap-4 my-4 mx-auto">
                 <button
                     name={currentPage - 1}
                     onClick={handlePageChange}
                     disabled={currentPage === 1}
                     className="btnPagination"
                 >
-                    Previous
+                    <AiOutlineArrowLeft size="1.4rem" />
                 </button>
                 {currentPage === totalPages && totalPages > 3 && (
                     <button
@@ -71,7 +71,7 @@ const PaginadoF = ({ currentPage, totalPages, setCurrentPage }) => {
                     disabled={currentPage === totalPages}
                     className="btnPagination"
                 >
-                    Next
+                    <AiOutlineArrowRight size="1.4rem" />
                 </button>
             </div>
         </div>

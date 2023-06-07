@@ -10,9 +10,12 @@ const SubscriptionForm = () => {
     const subscribe = async () => {
         setWasSubmitting(true);
         try {
-            const response = await axios.post('https://tu-api.com/subscriptions', {
-                email: email
-            });
+            const response = await axios.post(
+                "https://tu-api.com/subscriptions",
+                {
+                    email: email,
+                }
+            );
 
             if (response.data.success) {
                 setMessage("¡Gracias por suscribirte!");
@@ -34,8 +37,13 @@ const SubscriptionForm = () => {
                 {wasSubmitting && message ? (
                     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
                         <div className="floatBox p-8 w-2/6">
-                            <div className="mb-4 text-2xl font-semibold">{message}</div>
-                            <div className="text-normal mb-6">Revisa tu correo electrónico para las últimas novedades</div>
+                            <div className="mb-4 text-2xl font-semibold">
+                                {message}
+                            </div>
+                            <div className="text-normal mb-6">
+                                Revisa tu correo electrónico para las últimas
+                                novedades
+                            </div>
                             <button
                                 onClick={() => setMessage(null)}
                                 className="w-32 px-4 text-lg py-2 rounded-xl bg-green-600 hover:bg-green-400 focus:outline-none transition-colors duration-300"
@@ -46,9 +54,16 @@ const SubscriptionForm = () => {
                     </div>
                 ) : (
                     <>
-                        <h2 className="text-2xl text-center mb-8">Suscríbete a nuestras novedades</h2>
+                        <h2 className="text-2xl text-center mb-8">
+                            Suscríbete a nuestras novedades
+                        </h2>
                         <div className="flex flex-col my-2">
-                            <label htmlFor="email" className="block my-1 font-semibold">Email:</label>
+                            <label
+                                htmlFor="email"
+                                className="block my-1 font-semibold"
+                            >
+                                Email:
+                            </label>
                             <input
                                 className="input"
                                 type="email"

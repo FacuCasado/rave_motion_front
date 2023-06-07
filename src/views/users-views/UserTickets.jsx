@@ -67,7 +67,7 @@ const UserTickets = (props) => {
 
                     <div className="flex justify-self-end items-center gap-6">
                         <select
-                            className="inputSelect bg-secondary border-secondaryBorder text-white w-fit"
+                            className="inputSelect bg-secondaryLight dark:bg-secondary border-secondaryBorderLight dark:border-secondaryBorder dark:text-text w-fit"
                             onChange={handleFilter}
                             value={filterByDate}
                         >
@@ -87,7 +87,7 @@ const UserTickets = (props) => {
                 {/* Tickets */}
 
                 <div className="overflow-auto mt-4 ">
-                    <table className="w-full text-start bg-secondary border border-secondaryBorder mx-2 my-4 mb-8">
+                    <table className="w-full text-start bg-secondaryLight dark:bg-secondary border border-secondaryBorderLight dark:border-secondaryBorder mx-2 my-4 mb-8">
                         <thead className="font-semibold border-b-4 border-fuchsia-600">
                             <tr className="">
                                 <th

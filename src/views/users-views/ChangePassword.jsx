@@ -11,7 +11,7 @@ import axios from "axios";
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 // Hooks
-import { useToggle } from "../../functions/customHooks";
+import { useToggle } from "../../hooks/useToggle";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 

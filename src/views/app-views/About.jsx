@@ -130,7 +130,7 @@ const About = () => {
                         ¿QUÉ OFRECEMOS?
                     </h1>
                     <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-20">
-                        <div className="p-8 flex flex-col justify-center w-96 h-80  bg-secondary border border-secondaryBorder shadow-md rounded-md card group">
+                        <div className="p-8 flex flex-col justify-center w-96 h-80  bg-secondaryLight dark:bg-secondary border border-secondaryBorderLight dark:border-secondaryBorder shadow-md rounded-md card group">
                             <h3 className="font-bold text-4xl text-center leading-36 relative top-16 block group-hover:invisible leading-snug">
                                 Amplia selección de Eventos
                             </h3>
@@ -141,7 +141,7 @@ const About = () => {
                             </p>
                         </div>
 
-                        <div className="p-8 flex flex-col justify-center w-96 h-80 bg-secondary border border-secondaryBorder shadow-md rounded-md card group">
+                        <div className="p-8 flex flex-col justify-center w-96 h-80 bg-secondaryLight dark:bg-secondary border  border-secondaryBorderLight dark:border-secondaryBorder shadow-md rounded-md card group">
                             <h3 className="font-bold text-4xl text-center leading-36 relative top-28 block group-hover:invisible leading-snug">
                                 Compra <br /> segura y fácil
                             </h3>
@@ -154,7 +154,7 @@ const About = () => {
                             </p>
                         </div>
 
-                        <div className="p-8 flex flex-col justify-center w-96 h-80 bg-secondary border border-secondaryBorder shadow-md rounded-md card group">
+                        <div className="p-8 flex flex-col justify-center w-96 h-80 bg-secondaryLight dark:bg-secondary border border-secondaryBorderLight dark:border-secondaryBorder shadow-md rounded-md card group">
                             <h3 className="font-bold text-4xl text-center leading-36 relative top-20 block group-hover:invisible leading-snug">
                                 Experiencia premium
                             </h3>
@@ -176,11 +176,14 @@ const About = () => {
 
                 {/* nosotros */}
 
-                <div className="bg-primary">
+                <div className="">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-8 md:gap-12 pt-8 sm:pt-16 mb-8 sm:mb-32">
                         {nosotros.map((compañero) => (
-                            <div className="h-auto sm:h-[15rem] max-w-[30rem] m-auto flex flex-wrap bg-slate-900 rounded-xl border border-secondaryBorder">
-                                <div className="flex flex-col sm:flex-row bg-slate-900 rounded-xl border border-secondaryBorder rounded-l-xl">
+                            <div
+                                className="h-auto sm:h-[15rem] max-w-[30rem] m-auto flex flex-wrap bg-secondaryLight dark:bg-secondary rounded-xl border border-secondaryBorderLight dark:border-secondaryBorder"
+                                key={compañero.id}
+                            >
+                                <div className="flex flex-col sm:flex-row rounded-xl  rounded-l-xl">
                                     <img
                                         className="w-full sm:w-[15rem] rounded-l-xl bg-cover bg-bottom bg-no-repeat"
                                         src={compañero.foto}
@@ -197,7 +200,7 @@ const About = () => {
                                             <div className="flex justify-center sm:justify-start">
                                                 <p className="flex items-center">
                                                     <a
-                                                        className="inline-flex items-center text-white hover:text-pink-600"
+                                                        className="inline-flex items-center hover:text-pink-600"
                                                         href={compañero.github}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
@@ -207,7 +210,7 @@ const About = () => {
                                                 </p>
                                                 <p className="flex items-center mx-6">
                                                     <a
-                                                        className="inline-flex items-center text-white hover:text-pink-600"
+                                                        className="inline-flex items-center hover:text-pink-600"
                                                         href={
                                                             compañero.linkedin
                                                         }

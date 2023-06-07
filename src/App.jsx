@@ -16,7 +16,6 @@ import Success from "./components/Success";
 // App views
 import About from "./views/app-views/About";
 import Home from "./views/app-views/Home";
-import SearchResults from "./views/app-views/SearchResults";
 import NotFound from "./views/app-views/NotFound";
 import Reviews from "./views/app-views/Reviews";
 
@@ -88,24 +87,22 @@ const App = ({ verifyToken, isLogin, globalError, globalSuccess }) => {
             if (isLogin) {
                 setLoading(false);
             }
-            
-            if(!isLogin&&!token&&!tokenGoogle){
-                setLoading(false)
-                if(location==='/cart/:eventId'||location==='/tickets'){
-                    navigate("/signin")
+            if (!isLogin && !token && !tokenGoogle) {
+                setLoading(false);
+                if (location === "/cart/:eventId" || location === "/tickets") {
+                    navigate("/signin");
                 }
-
             }
         };
         loginJWT();
     }, []);
 
     return loading ? (
-        <div className="w-screen h-screen bg-primary">
+        <div className="w-screen h-screen bg-primaryLight dark:bg-primary">
             <Loading />
         </div>
     ) : (
-        <div className="bg-primary text-white antialiased overflow-hidden">
+        <div className="bg-primaryLight dark:bg-primary text-textLight dark:text-text antialiased overflow-hidden">
             {showHeader && <Header />}
             {globalError && <Alert />}
             {globalSuccess && <Success />}
@@ -114,7 +111,6 @@ const App = ({ verifyToken, isLogin, globalError, globalSuccess }) => {
                 <Route exact path="/" element={<Home />} />
                 <Route path="/reviews" element={<Reviews />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/search" element={<SearchResults />} />
 
                 {/* Events views */}
 

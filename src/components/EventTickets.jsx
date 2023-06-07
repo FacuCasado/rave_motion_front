@@ -15,7 +15,8 @@ const EventTickets = ({ tickets }) => {
     return (
         <span
             className={`${
-                ticketsMax === ticketsSolds && "text-green-500 font-semibold"
+                ticketsMax === ticketsSolds &&
+                "text-green-700 dark:text-green-500 font-semibold"
             }`}
         >
             <span className="font-semibold">{ticketsSolds}</span> / {ticketsMax}

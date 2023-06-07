@@ -59,7 +59,7 @@ const EmailPassword = () => {
             <div className="floatBox w-96">
                 {wasSumitting && !error ? (
                     <>
-                        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
+                        <div className="fixed inset-0 z-50 flex items-center justify-center bg-primaryLight dark:bg-primary bg-opacity-80 dark:bg-opacity-90">
                             <div className="floatBox p-8  w-full lg:w-2/6">
                                 <div className="mb-4 text-2xl font-semibold">
                                     Revisa tu email!

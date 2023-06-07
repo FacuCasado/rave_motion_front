@@ -125,11 +125,11 @@ const EventDetail = (props) => {
                 {/* Float Box con detalle y flecha */}
                 <div className="my-auto min-h-[calc(100vh_-_4rem)] flex flex-col justify-center ">
                     {/* Detalle */}
-                    <div className="floatBox w-full md:w-2/3 h-fit md:mx-auto overflow-hidden font-sans bg-secondary">
+                    <div className="floatBox w-full md:w-2/3 h-fit md:mx-auto overflow-hidden font-sans">
                         {eventDetail.name ? (
                             <div className="h-full w-full flex flex-col">
                                 {/* Name */}
-                                <div className="flex flex-row w-full items-center justify-center pb-4 border-b border-secondaryBorder">
+                                <div className="flex flex-row w-full items-center justify-center pb-4 border-b border-secondaryBorderLight dark:border-secondaryBorder">
                                     <h2 className="text-2xl md:text-4xl align-center font-semibold">
                                         {eventDetail.name}
                                     </h2>
@@ -149,7 +149,7 @@ const EventDetail = (props) => {
                                     </div>
 
                                     <div className="w-full md:w-2/3 flex flex-col pl-4">
-                                        <div className="flex flex-row items-center justify-start mt-4 md:mt-0 pb-4 gap-2 border-b border-secondaryBorder text-fuchsia-600 font-semibold text-xl">
+                                        <div className="flex flex-row items-center justify-start mt-4 md:mt-0 pb-4 gap-2 border-b border-secondaryBorderLight dark:border-secondaryBorder text-fuchsia-600 font-semibold text-xl">
                                             <AiOutlineCalendar size="1.75rem" />
                                             <span className="">
                                                 <EventDate
@@ -159,7 +159,7 @@ const EventDetail = (props) => {
                                                 />
                                             </span>
                                         </div>
-                                        <div className="flex flex-row items-center justify-start py-4 gap-2 border-b border-secondaryBorder">
+                                        <div className="flex flex-row items-center justify-start py-4 gap-2 border-b border-secondaryBorderLight dark:border-secondaryBorder">
                                             <ImLocation2 size="1.3rem" />
                                             <span>
                                                 <span className="font-semibold">
@@ -168,7 +168,7 @@ const EventDetail = (props) => {
                                                 - {eventDetail.venue}
                                             </span>
                                         </div>
-                                        <div className="flex flex-col items-center justify-start py-4 gap-2  border-b border-secondaryBorder">
+                                        <div className="flex flex-col items-center justify-start py-4 gap-2  border-b border-secondaryBorderLight dark:border-secondaryBorder">
                                             <span className="w-full font-semibold">
                                                 DESCRIPCIÓN
                                             </span>
@@ -176,7 +176,7 @@ const EventDetail = (props) => {
                                                 {eventDetail.description}
                                             </span>
                                         </div>
-                                        <div className="flex flex-row items-center justify-start py-4 gap-2  border-b border-secondaryBorder">
+                                        <div className="flex flex-row items-center justify-start py-4 gap-2  border-b border-secondaryBorderLight dark:border-secondaryBorder">
                                             {disponibles}
                                             {minPrice}
                                         </div>
@@ -230,10 +230,10 @@ const EventDetail = (props) => {
                 {/* Float Box con tickets */}
                 <div className="my-auto  flex flex-col justify-center ">
                     {/* Header tickets */}
-                    <div className="floatBox md:w-2/3 h-fit md:mx-auto overflow-hidden font-sans bg-secondary">
+                    <div className="floatBox md:w-2/3 h-fit md:mx-auto overflow-hidden">
                         {tickets?.length ? (
                             <>
-                                <div className="flex flex-row w-full items-center justify-center pb-4 border-b border-secondaryBorder">
+                                <div className="flex flex-row w-full items-center justify-center pb-4 border-b border-secondaryBorderLight dark:border-secondaryBorder">
                                     <h2 className="text-4xl align-center font-semibold">
                                         Tickets:
                                     </h2>

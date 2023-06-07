@@ -67,7 +67,7 @@ const Reviews = ({ allEvents, homeEvents, currentPage, eventsPerPage }) => {
                 ></div>
             </div>
             <div className="w-screen grid my-4">
-                <div className="flex w-fit justify-self-end my-2 items-center gap-6 py-1 px-4 bg-secondary rounded-full border border-secondaryBorder mr-4">
+                <div className="flex w-fit justify-self-end my-2 items-center gap-6 py-1 px-4 bg-secondaryLight dark:bg-secondary rounded-full border border-secondaryBorderLight dark:border-secondaryBorder mr-4">
                     <>{allEvents.length} Resultados</> | Página{" "}
                     {totalPages ? currentPage : "0"} / {totalPages}
                 </div>

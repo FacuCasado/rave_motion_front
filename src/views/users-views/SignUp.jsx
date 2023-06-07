@@ -27,9 +27,7 @@ import {
     setSignUpStep,
 } from "../../redux/actions/usersActions";
 // Google button
-import GoogleLogin from "./GoogleLogin"
-// React icons
-import { FcGoogle } from "react-icons/fc";
+import GoogleLogin from "./GoogleLogin";
 
 // Components
 import SignUpForm1 from "../../components/SignUpForm1";
@@ -67,7 +65,7 @@ const SignUp = ({ signUpStep, setSignUpStep }) => {
 
     return (
         <div className="w-full h-screen flex flex-col justify-center items-center">
-            <div className="flex flex-col w-96 py-8 px-4 bg-secondary rounded-xl border border-secondaryBorder">
+            <div className="flex flex-col w-96 py-8 px-4 bg-secondaryLight dark:bg-secondary rounded-xl border border-secondaryBorderLight dark:border-secondaryBorder">
                 {/* Cabezera */}
 
                 {/* Indicador de paso */}
@@ -96,13 +94,12 @@ const SignUp = ({ signUpStep, setSignUpStep }) => {
                     <>
                         {/* Divider */}
                         <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-                            <p className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
+                            <p className="mx-4 mb-0 text-center font-semibold dark:text-text">
                                 OR
                             </p>
                         </div>
 
-                     
-              <GoogleLogin/>
+                        <GoogleLogin />
                     </>
                 )}
 

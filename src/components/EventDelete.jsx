@@ -86,7 +86,7 @@ const EventDelete = (props) => {
         <>
             {deleteStep === 1 ? (
                 <>
-                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
+                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-primaryLight dark:bg-primary bg-opacity-80 dark:bg-opacity-90">
                         <div className="floatBox p-8 w-full lg:w-2/6">
                             <div className="mb-4 text-2xl font-semibold">
                                 Eliminar evento
@@ -99,7 +99,7 @@ const EventDelete = (props) => {
                                 <div className="flex flex-row gap-6 justify-end">
                                     <button
                                         onClick={handleCancelClick}
-                                        className="w-32 px-4 text-lg py-2 rounded-xl bg-primary hover:bg-slate-800 focus:outline-none transition-colors duration-300"
+                                        className="w-32 px-4 text-lg py-2 rounded-xl bg-slate-300 dark:bg-primary hover:bg-slate-500 dark:hover:bg-slate-800 focus:outline-none transition-colors duration-300"
                                     >
                                         Cancelar
                                     </button>
@@ -116,7 +116,7 @@ const EventDelete = (props) => {
                 </>
             ) : deleteStep === 2 ? (
                 <>
-                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
+                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-primaryLight dark:bg-primary bg-opacity-80 dark:bg-opacity-90">
                         <div className="floatBox p-8 w-full lg:w-2/6">
                             <div className="mb-4 text-2xl font-semibold w-full">
                                 Eliminar evento
@@ -144,7 +144,7 @@ const EventDelete = (props) => {
                                 <div className="flex flex-row gap-6 justify-end">
                                     <button
                                         onClick={handleCancelClick}
-                                        className="w-32 px-4 text-lg py-2 rounded-xl bg-primary hover:bg-slate-800 focus:outline-none transition-colors duration-300"
+                                        className="w-32 px-4 text-lg py-2 rounded-xl  bg-slate-300 dark:bg-primary hover:bg-slate-500 dark:hover:bg-slate-800 focus:outline-none transition-colors duration-300"
                                     >
                                         Cancelar
                                     </button>

@@ -13,11 +13,10 @@
 import { Link, useNavigate } from "react-router-dom";
 
 // Hooks
-import { useToggle } from "../../functions/customHooks";
+import { useToggle } from "../../hooks/useToggle";
 
 // React icons
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { FcGoogle } from "react-icons/fc";
 
 // Formik, Yup
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -63,7 +62,7 @@ const SignIn = ({ signIn, userSignError, isLogin }) => {
 
     return (
         <div className="w-full h-screen flex flex-col justify-center items-center">
-            <div className="flex flex-col w-96 py-8 px-4 bg-slate-900 rounded-xl border border-secondaryBorder">
+            <div className="flex flex-col w-96 py-8 px-4 bg-secondaryLight dark:bg-secondary rounded-xl border border-secondaryBorderLight dark:border-secondaryBorder">
                 <h2 className="text-4xl text-center mb-8">Bienvenido!</h2>
                 <Formik
                     initialValues={initialValues}
@@ -180,7 +179,7 @@ const SignIn = ({ signIn, userSignError, isLogin }) => {
 
                             {/* Divider */}
                             <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-                                <p className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
+                                <p className="mx-4 mb-0 text-center font-semibold dark:text-text">
                                     OR
                                 </p>
                             </div>
@@ -189,11 +188,11 @@ const SignIn = ({ signIn, userSignError, isLogin }) => {
                 </Formik>
 
                 {/* Google */}
-               
-                <div className="flex justify-center mx-auto"> 
-        <GoogleLogin  />
-        </div>
-       
+
+                <div className="flex justify-center mx-auto">
+                    <GoogleLogin />
+                </div>
+
                 {/* Links */}
                 <div className="flex flex-col mt-8">
                     <div className="text-center flex-row my-1">

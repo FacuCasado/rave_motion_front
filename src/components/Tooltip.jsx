@@ -22,7 +22,7 @@ const Tooltip = ({ children, tooltip, x }) => {
             {tooltip ? (
                 <span
                     ref={tooltipRef}
-                    className="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition bg-secondary border border-secondaryBorder text-white p-1 rounded absolute top-full mt-2 whitespace-nowrap"
+                    className="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition bg-secondaryLight dark:bg-secondary border border-secondaryBorderLight dark:border-secondaryBorder dark:text-white p-1 rounded absolute top-full mt-2 whitespace-nowrap"
                 >
                     {tooltip}
                 </span>

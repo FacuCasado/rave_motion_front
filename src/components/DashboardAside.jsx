@@ -1,9 +1,6 @@
 // React Router Dom
 import { Link, useNavigate } from "react-router-dom";
 
-// Hooks
-import { useState, useEffect } from "react";
-
 // Redux
 import { connect } from "react-redux";
 import { signOut } from "../redux/actions/usersActions";
@@ -19,6 +16,9 @@ import {
     MdInsertChartOutlined,
     MdArrowBackIos,
 } from "react-icons/md";
+
+// Components
+import DarkModeSwitch from "./DarkModeSwitch";
 
 const DashboardAside = ({
     userData,
@@ -38,7 +38,7 @@ const DashboardAside = ({
     return (
         <>
             {/* Aside */}
-            <aside className="hidden lg:block w-1/6 bg-secondary py-4">
+            <aside className="hidden lg:block w-1/6 bg-secondaryLight dark:bg-secondary border border-secondaryBorderLight dark:border-secondaryBorder py-4">
                 {/* Section logo */}
                 <div className="flex w-full px-4 py-2 items-center h-16 gap-2">
                     <div className="bg-slate-500 rounded-full w-12 h-12 flex justify-center items-center text-2xl font-semibold">
@@ -68,6 +68,9 @@ const DashboardAside = ({
                             Home
                         </div>
                     </Link>
+                </div>
+                <div className="dropDownItem">
+                    <DarkModeSwitch blockType="true" />
                 </div>
 
                 {/* Section Producer */}
@@ -99,8 +102,10 @@ const DashboardAside = ({
                 </div>
                 <div className="dropDownItem ">
                     <Link className="navLinkDropdown" to="/changepassword">
-                        <div className="flex flex-row items-center gap-2"
-                        onClick={handleSignOutClick}>
+                        <div
+                            className="flex flex-row items-center gap-2"
+                            onClick={handleSignOutClick}
+                        >
                             <GoLock size="1.5rem" />
                             Cambiar contraseña
                         </div>
@@ -121,7 +126,7 @@ const DashboardAside = ({
 
             {/* Aside responsive */}
             {showAside && (
-                <aside className="lg:hidden fixed inset-0 z-50 flex bg-secondary bg-opacity-95">
+                <aside className="lg:hidden fixed inset-0 z-50 flex bg-secondaryLight dark:bg-secondary bg-opacity-95">
                     <button
                         className="absolute left-4 top-4 flex flex-row btnPrimary items-center px-4 py-1 w-fit"
                         onClick={() => setShowAside(false)}
@@ -159,6 +164,9 @@ const DashboardAside = ({
                                     Home
                                 </div>
                             </Link>
+                        </div>
+                        <div className="dropDownItem">
+                            <DarkModeSwitch blockType="true" />
                         </div>
 
                         {/* Section Producer */}

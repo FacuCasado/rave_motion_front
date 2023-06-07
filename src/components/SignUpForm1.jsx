@@ -6,7 +6,7 @@
 */
 
 // Hooks
-import { useToggle } from "../functions/customHooks";
+import { useToggle } from "../hooks/useToggle";
 
 // React icons
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
@@ -103,7 +103,7 @@ const SignUpForm1 = ({
                             htmlFor="email"
                             className="block my-1 font-semibold"
                         >
-                           Email:
+                            Email:
                         </label>
                         <Field
                             className={

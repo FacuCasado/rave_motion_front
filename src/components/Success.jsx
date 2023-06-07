@@ -43,7 +43,7 @@ const Success = ({ globalSuccess, removeGlobalSuccess }) => {
 
     return (
         <div className={ubicStyle}>
-            <div className="relative py-5 px-16 floatBox border-green-400 text-green-400">
+            <div className="relative py-5 px-16 floatBox border-green-600 dark:bg-green-400 text-green-600 dark:text-green-400">
                 <button
                     type="button"
                     className="absolute top-0 right-2 p-1"
