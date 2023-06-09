@@ -15,7 +15,7 @@ const Paginado = ({ currentPage, totalPages, setCurrentPage }) => {
             <div className="flex self-center items-center gap-4 my-4 mx-auto">
                 <button
                     name={currentPage - 1}
-                    onClick={handlePageChange}
+                    onClick={()=>setCurrentPage(currentPage - 1)}
                     disabled={currentPage === 1}
                     className="btnPagination"
                 >
@@ -67,7 +67,7 @@ const Paginado = ({ currentPage, totalPages, setCurrentPage }) => {
                 )}
                 <button
                     name={currentPage + 1}
-                    onClick={handlePageChange}
+                    onClick={()=>setCurrentPage(currentPage + 1)}
                     disabled={currentPage === totalPages}
                     className="btnPagination"
                 >
